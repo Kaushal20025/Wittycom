@@ -1,0 +1,31 @@
+<!-- templates/index.html -->
+{% extends 'base.html' %}
+
+{% block title %}Home - WittyCom Resources{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <header class="bg-black text-white text-center py-16">
+        <h1 class="text-4xl font-bold">Free Resources for Students</h1>
+        <p class="mt-4 text-lg">Helping students succeed with free, high-quality resources</p>
+    </header>
+
+    <!-- Resource Cards -->
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+            <h3 class="text-xl font-semibold text-gray-800">Free Coding Tutorials</h3>
+            <p class="text-gray-600 mt-2">Access a wide range of coding tutorials for different programming languages.</p>
+            <a href="#" class="mt-4 inline-block text-black ">Learn More</a>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+            <h3 class="text-xl font-semibold text-gray-800">Design Resources</h3>
+            <p class="text-gray-600 mt-2">Explore free design resources to enhance your creative projects.</p>
+            <a href="#" class="mt-4 inline-block text-black-600 hover:text-black-800">Learn More</a>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+            <h3 class="text-xl font-semibold text-gray-800">Math & Science Help</h3>
+            <p class="text-gray-600 mt-2">Find free materials and tutoring for Math and Science subjects.</p>
+            <a href="#" class="mt-4 inline-block text-black-600 hover:text-black-800">Learn More</a>
+        </div>
+    </section>
+{% endblock %}

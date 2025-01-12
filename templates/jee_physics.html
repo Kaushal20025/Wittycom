@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block title %}JEE Physics - WittyCom Resources{% endblock %}
+
+{% block content %}
+    <header class="bg-black text-white text-center py-16">
+        <h1 class="text-4xl font-bold">JEE Physics Resources</h1>
+        <p class="mt-4 text-lg">Access resources for each chapter to aid your preparation.</p>
+    </header>
+
+    <div id="chapters-list" class="py-12">
+        <h2 class="text-3xl font-semibold">Chapters</h2>
+        <ul class="space-y-4 mt-6">
+            <li><a href="#" onclick="loadChapter('Kinematics')">Kinematics</a></li>
+            <li><a href="#" onclick="loadChapter('Work Energy and Power')">Work Energy and Power</a></li>
+        </ul>
+    </div>
+
+    <div id="chapter-resources" class="py-12 hidden">
+        <h2 id="chapter-title" class="text-3xl font-semibold"></h2>
+
+        <div id="pyqs-section" class="mt-6">
+            <h3 class="text-xl font-semibold">PYQs</h3>
+            <ul id="pyqs-list" class="space-y-4 mt-2"></ul>
+        </div>
+
+        <div id="dpp-section" class="mt-6">
+            <h3 class="text-xl font-semibold">DPP</h3>
+            <ul id="dpp-list" class="space-y-4 mt-2"></ul>
+        </div>
+
+        <div id="lectures-section" class="mt-6">
+            <h3 class="text-xl font-semibold">Lectures</h3>
+            <ul id="lectures-list" class="space-y-4 mt-2"></ul>
+        </div>
+    </div>
+
+    <script>
+        function loadChapter(chapterName) {
+            // Show the resources section
+            document.getElementById("chapters-list").classList.add("hidden");
+            document.getElementById("chapter-resources").classList.remove("hidden");
+            document.getElementById("chapter-title").textContent = chapterName;
+
+            // Fetch PYQs resources for the chapter
+            fetch(`/get_resource/${chapterName}/pyqs`)
+                .then(response => response.json())
+                .then(data => {
+                    let pyqsList = document.getElementById("pyqs-list");
+                    pyqsList.innerHTML = ''; // Clear previous data
+                    data.forEach(resource => {
+                        let li = document.createElement("li");
+                        li.innerHTML = `<a href="${resource.link}" class="text-blue-600">${resource.title}</a>`;
+                        pyqsList.appendChild(li);
+                    });
+                });
+
+            // Fetch DPP resources for the chapter
+            fetch(`/get_resource/${chapterName}/dpp`)
+                .then(response => response.json())
+                .then(data => {
+                    let dppList = document.getElementById("dpp-list");
+                    dppList.innerHTML = ''; // Clear previous data
+                    data.forEach(resource => {
+                        let li = document.createElement("li");
+                        li.innerHTML = `<a href="${resource.link}" class="text-blue-600">${resource.title}</a>`;
+                        dppList.appendChild(li);
+                    });
+                });
+
+            // Fetch Lectures resources for the chapter
+            fetch(`/get_resource/${chapterName}/lectures`)
+                .then(response => response.json())
+                .then(data => {
+                    let lecturesList = document.getElementById("lectures-list");
+                    lecturesList.innerHTML = ''; // Clear previous data
+                    data.forEach(resource => {
+                        let li = document.createElement("li");
+                        li.innerHTML = `<a href="${resource.link}" class="text-blue-600">${resource.title}</a>`;
+                        lecturesList.appendChild(li);
+                    });
+                });
+        }
+    </script>
+{% endblock %}

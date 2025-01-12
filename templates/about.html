@@ -1,0 +1,28 @@
+<!-- templates/about.html -->
+{% extends 'base.html' %}
+
+{% block title %}About - WittyCom{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <header class="bg-black text-white text-center py-16">
+        <h1 class="text-4xl font-bold">About WittyCom</h1>
+        <p class="mt-4 text-lg">Providing students with access to free, high-quality resources to help them succeed.</p>
+    </header>
+
+    <!-- Mission Statement -->
+    <section class="mt-12">
+        <h2 class="text-2xl font-semibold text-gray-800">Our Mission</h2>
+        <p class="text-lg text-gray-600 mt-4">WittyCom is dedicated to providing free educational resources to students, helping them to learn, grow, and succeed in their academic pursuits. We aim to bridge the gap between students and the vast amount of knowledge available online.</p>
+    </section>
+
+    <!-- Values -->
+    <section class="mt-8">
+        <h3 class="text-2xl font-semibold text-gray-800">Our Values</h3>
+        <ul class="list-disc pl-6 space-y-4 text-lg text-gray-600 mt-4">
+            <li>Accessibility: Ensuring that learning materials are available to all students at no cost.</li>
+            <li>Quality: Providing high-quality resources from trusted sources.</li>
+            <li>Collaboration: Building a community of learners who can share knowledge and resources with one another.</li>
+        </ul>
+    </section>
+{% endblock %}

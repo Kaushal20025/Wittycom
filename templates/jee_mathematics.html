@@ -1,0 +1,29 @@
+<!-- templates/jee_mathematics.html -->
+{% extends 'base.html' %}
+
+{% block title %}JEE Mathematics Resources - WittyCom{% endblock %}
+
+{% block content %}
+   
+
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 mt-12">
+        <!-- PDF Resource -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold text-gray-800">Mathematics Theory PDF</h3>
+            <p class="text-gray-600 mt-2">Download the JEE Mathematics theory PDF for concept clarity.</p>
+            <a href="/static/resources/jee/mathematics_theory.pdf" class="mt-4 inline-block text-blue-600">Download PDF</a>
+        </div>
+        <!-- Playlist Resource -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold text-gray-800">Mathematics YouTube Playlist</h3>
+            <p class="text-gray-600 mt-2">Watch this playlist for key Mathematics topics for JEE Mains.</p>
+            <a href="https://youtube.com/playlist?list=XYZ" class="mt-4 inline-block text-blue-600" target="_blank">Watch Playlist</a>
+        </div>
+        <!-- Assignment Resource -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold text-gray-800">Mathematics Assignment</h3>
+            <p class="text-gray-600 mt-2">Download this practice assignment for JEE Mathematics preparation.</p>
+            <a href="/static/resources/jee/mathematics_assignment.pdf" class="mt-4 inline-block text-blue-600">Download Assignment</a>
+        </div>
+    </section>
+{% endblock %}

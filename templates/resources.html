@@ -1,0 +1,25 @@
+<!-- templates/resources.html -->
+{% extends 'base.html' %}
+
+{% block title %}JEE & NEET Resources - WittyCom{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <header class="bg-black text-white text-center py-16">
+        <h1 class="text-4xl font-bold">Exam Resources</h1>
+        <p class="mt-4 text-lg">Free Resources for JEE Mains, NEET, and School Exams (Class 10, 11 & 12)</p>
+    </header>
+
+    <!-- Resource Categories Section -->
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 mt-12">
+        <div class="bg-blue-600 p-6 rounded-lg text-white text-center cursor-pointer hover:bg-blue-700 transition">
+            <h3 class="text-xl font-semibold">JEE Mains</h3>
+            <p class="mt-2">Find study materials, practice papers, and more for JEE Mains preparation.</p>
+            <a href="/jee" class="mt-4 inline-block text-white">Explore Resources</a>
+        </div>
+       
+        
+        
+      
+    </section>
+{% endblock %}
