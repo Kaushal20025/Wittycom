@@ -1,0 +1,17 @@
+{
+    "chapters": [
+      {
+        "name": "Kinematics",
+        "url": "/jee_physics/kinematics"
+      },
+      {
+        "name": "Laws of Motion",
+        "url": "/jee_physics/laws_of_motion"
+      },
+      {
+        "name": "Work, Energy, and Power",
+        "url": "/jee_physics/work_energy_power"
+      }
+    ]
+  }
+  
